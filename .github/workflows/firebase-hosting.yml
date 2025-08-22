@@ -15,13 +15,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build (Next static export)
         run: npm run build
-        # seu package.json deve ter: "build": "next build && npx next export"
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
