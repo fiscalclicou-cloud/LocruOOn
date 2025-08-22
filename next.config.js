@@ -2,6 +2,8 @@
 const nextConfig = {
   output: 'export',
   images: { unoptimized: true },
-  trailingSlash: true // ajuda com hospedagem estática
+  // opcional:
+  // trailingSlash: true,
 };
+
 module.exports = nextConfig;
